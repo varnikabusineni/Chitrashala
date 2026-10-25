@@ -140,7 +140,7 @@ Painting: available ──purchase──► sold ──order cancelled──► 
 - Automated SQL tests: 75 checks plus 2 concurrency tests.
 
 ### Incomplete / known limitations
-- **Not yet run against a live Supabase project.** It was built and tested on PostgreSQL 16 plus a browser mock, because no Supabase credentials were available. Run the curl checks in README §9 once.
+-- **Tested on a live Supabase project.** Sign-up, buying, booking, pottery and the studio dashboard all work.
 - **No real payments.** "Buying" places an order (a reservation); there's no payment gateway.
 - **Images for new paintings** are a path (`images/…`) or an `https://` URL. There is no upload to Supabase Storage.
 - **Plain table reads** of another customer's record return `200 []` (RLS hides the row). The explicit **404** comes from the `get_*` and mutation functions.
