@@ -1,0 +1,17 @@
+# Secrets (config.js is committed on purpose: it only holds PUBLIC values)
+.env
+.env.*
+!.env.example
+
+# The original upload contains the studio password in plain text
+seedData.zip
+seedData/
+__MACOSX/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+*.log

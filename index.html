@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chitrashala — A House of Indian Folk Art</title>
+  <meta name="description" content="Collect original Indian folk paintings, commission a hand-painted wall mural, or order pottery glazed in your colour.">
+
+  <!-- Fonts: Marcellus (headings & logo) + Albert Sans (text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Albert+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <!-- ========== Header & navigation ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#/" aria-label="Chitrashala home">
+        <svg class="logo-arc" viewBox="0 0 176 44" aria-hidden="true">
+          <defs><path id="logoArc" d="M14,42 Q88,-2 162,42"/></defs>
+          <text><textPath href="#logoArc" startOffset="50%" text-anchor="middle">FOLK ✿ ART ✿ HOUSE</textPath></text>
+        </svg>
+        <span class="logo-sun" aria-hidden="true"></span>
+        <span class="logo-name">chitrashala</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main">
+        <div class="nav-left">
+          <a href="#/paintings" data-route="/paintings">Gallery</a>
+          <a href="#/murals" data-route="/murals">Murals</a>
+          <a href="#/pottery" data-route="/pottery">Pottery</a>
+        </div>
+        <div class="nav-right">
+          <a href="#/orders" data-route="/orders" data-show="customer">My collection</a>
+          <a href="#/admin" data-route="/admin" data-show="studio">Studio ledger</a>
+          <div class="nav-account" id="navAccount">
+            <!-- filled by app.js: login button or account chip -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Page content (each "page" is rendered here by app.js) ========== -->
+  <main id="app" tabindex="-1"></main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-logo">chitrashala</p>
+        <p class="footer-note">A gentle house of Indian folk art —<br>paintings, murals and pottery, made by hand.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#/paintings">Gallery</a>
+        <a href="#/murals">Murals</a>
+        <a href="#/pottery">Pottery</a>
+        <a href="#/orders">My collection</a>
+      </div>
+      <p class="footer-small">✿ All prices in INR · Chitrashala, a house of Indian folk art · College project</p>
+    </div>
+  </footer>
+
+  <!-- Toast messages (announced to screen readers) -->
+  <div class="toast-area" id="toastArea" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Reusable confirm dialog (native <dialog> = keyboard + focus handled by the browser) -->
+  <dialog class="dialog" id="confirmDialog" aria-labelledby="confirmTitle">
+    <form method="dialog" class="dialog-body">
+      <h2 id="confirmTitle" class="dialog-title"></h2>
+      <p id="confirmMessage" class="dialog-text"></p>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost" value="cancel">Not now</button>
+        <button class="btn btn-primary" value="ok" id="confirmOk">Yes</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Supabase client library (pinned version) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <!-- Your project URL + PUBLIC anon key. Generated from .env, not committed. -->
+  <script src="config.js?v=10"></script>
+  <script src="app.js?v=10"></script>
+</body>
+</html>
